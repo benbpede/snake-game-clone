@@ -1,0 +1,52 @@
+.hidden {
+  display: none;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  border-collapse: collapse;
+  color: #000;
+  text-decoration: none;
+}
+
+#write-name h1 {
+  font-size: 144px;
+  font-weight: 300;
+  line-height: 169px;
+  width: 100%;
+  position: absolute;
+  top: 300px;
+
+  text-align: center;
+}
+
+#write-name input {
+  border: none;
+  font-size: 84px;
+  font-weight: 100;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  top: 469px;
+  text-align: center;
+}
+
+#write-name input:focus {
+  outline: none;
+}
+
+#greeting {
+  font-size: 144px;
+  font-weight: 300;
+  line-height: 169px;
+  width: 100%;
+  position: absolute;
+  top: 300px;
+
+  text-align: center;
+}
