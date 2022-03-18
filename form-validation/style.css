@@ -27,10 +27,18 @@ h2 {
   text-align: center;
 }
 
-.container form input {
-  line-weight: thick;
-}
-
 .container form input :focus {
   outline: 0;
+}
+
+form div small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+form div.error small {
+  visibility: visible;
 }

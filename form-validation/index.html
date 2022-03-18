@@ -17,18 +17,17 @@
             <input
               type="text"
               name="username"
+              id="username"
               placeholder="이름을 입력하세요"
             />
             <small>Error message</small>
           </div>
-          <label for="id">아이디</label>
+          <label for="userid">아이디</label>
           <input
             type="text"
-            name="id"
+            id="userid"
+            name="userid"
             placeholder="아이디를 입력하세요"
-            required
-            minlength="6"
-            maxlength="15"
           />
           <small>Error message</small>
         </div>
@@ -37,6 +36,7 @@
           <input
             type="password"
             name="password"
+            id="password"
             placeholder="비밀번호를 입력하세요"
           />
           <small>Error message</small>
@@ -46,13 +46,19 @@
           <input
             type="password2"
             name="password2"
+            id="password2"
             placeholder="비밀번호를 다시 입력하세요"
           />
           <small>Error message</small>
         </div>
         <div class="email-form">
           <label for="email">이메일</label>
-          <input type="email" name="email" placeholder="이메일을 입력하세요" />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="이메일을 입력하세요"
+          />
           <small>Error message</small>
         </div>
 
@@ -71,5 +77,6 @@
         <button>Submit</button>
       </form>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
