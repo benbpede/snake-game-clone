@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Account</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img />
+        <h2 class="title">가계부</h2>
+      </header>
+      <!--총합, 수익, 지출 보여주는 박스-->
+      <section class="total_box">
+        <h1 class="total">0</h1>
+        <div class="up_down">
+          <div class="income_box">
+            <div class="icon_circle"></div>
+            <div class="income_info">
+              <span class="income_text">수입</span>
+              <span class="income_total">0</span>
+            </div>
+          </div>
+          <div class="expense_box">
+            <div class="icon_circle"></div>
+            <div class="expense_info">
+              <span class="expense_text">지출</span>
+              <span class="expense_total">0</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 전체 내역-->
+      <section class="list_box">
+        <nav>
+          <div class="list_nav">
+            <h3>전체 내역</h3>
+            <ul class="menu">
+              <li><a href="#">전체</a></li>
+              <li><a href="#">수입</a></li>
+              <li><a href="#">지출</a></li>
+              <li><a href="#">초기화</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <ul class="history_list">
+          <!--분류, 내용, 금액, 삭제 버튼이 담긴 리스트 생성-->
+        </ul>
+      </section>
+      <!--추가 버튼, 입력창-->
+      <footer>
+        <div class="show_btn">
+          <button>+</button>
+        </div>
+        <form action="">
+          <div class="input_box">
+            <div class="radio">
+              <input
+                type="radio"
+                name="check"
+                value="income"
+                class="income_btn"
+                id="income"
+                checked
+              />
+              <label for="income">수입</label>
+              <input
+                type="radio"
+                name="check"
+                value="expense"
+                class="expense_btn"
+                id="expense"
+              />
+              <label for="expense">지출</label>
+            </div>
+
+            <div class="select_list">
+              <h4>종류</h4>
+              <select name="select_box" id="select_box">
+                <option value="food">식비</option>
+                <option value="ride">교통</option>
+                <option value="hobby">취미생활</option>
+                <option value="shop">쇼핑</option>
+                <option value="salary">월급</option>
+                <option value="pin">용돈</option>
+                <option value="etc">기타</option>
+              </select>
+            </div>
+            <div class="price">
+              <input type="number" />
+            </div>
+            <div class="subject">
+              <input type="text" placeholder="내용" />
+            </div>
+            <div class="buttons">
+              <button class="submit_btn">저장</button>
+              <button class="close_btn">닫기</button>
+            </div>
+          </div>
+        </form>
+      </footer>
+    </div>
+    <script src="showing.js"></script>
+    <script src="submit.js"></script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  text-align: center;
+}
+
+footer .input_box {
+  display: none;
+}
+
+footer .input_box.showing_input_box {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 600px;
+  border: 1px solid red;
+}
+
+header {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: center;
+}
+
+header .title {
+  font-size: 36px;
+  font-weight: 600;
+  border: 1px solid red;
+}
+
+.total_box {
+  margin: auto;
+  border-radius: 30px;
+  width: 80%;
+  height: 200px;
+  background-color: rgba(102, 205, 170);
+}
+
+.total_box .total {
+  color: #fff;
+  font-size: 50px;
+  font-weight: lighter;
+  border: 1px solid red;
+  padding: 15px 0;
+}
+
+.total_box .up_down {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto;
+  width: 70%;
+}
+
+.list_box {
+  border: 1px solid red;
+}
+
+.list_box nav .list_nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list_box nav .list_nav .menu {
+  display: flex;
+}
+
+.list_box nav .list_nav .menu li {
+  margin-left: 20px;
+}
+
+.list_box nav .list_nav .menu li a {
+  font-size: 13px;
+}
+
+.history_list {
+  height: 400px;
+}
+
+footer {
+  border: 1px solid green;
+}
