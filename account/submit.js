@@ -1,4 +1,5 @@
 const submitBtn = document.querySelector(".submit_btn");
+const expenseBtn = document.querySelector(".expense_btn");
 const historyList = document.querySelector(".history_list");
 const selectBox = document.querySelector("#select_box");
 const subjectInput = document.querySelector(".subject input");
@@ -24,14 +25,24 @@ function submitAccount(event) {
   event.preventDefault();
   const selectVal = selectBox.options[selectBox.selectedIndex].text;
   const subjectVal = subjectInput.value;
-  const priceVal = priceInput.value;
+  let priceVal = priceInput.value;
+
+  if (priceVal.trim() === "") {
+    alert("가격을 입력하세요");
+    return;
+  }
+  if (expenseBtn.checked === true) {
+    if (priceVal > 0) {
+      priceVal = priceVal * -1;
+    }
+  }
+  subjectInput.value = "";
+  priceInput.value = "";
   const historyObj = getHistotyObj(selectVal, subjectVal, priceVal);
-  console.log(historyObj);
   paintAccount(historyObj);
   historyArr.push(historyObj);
   saveHistory();
-  subjectInput.value = "";
-  priceInput.value = "";
+  updatePrice();
 }
 
 submitBtn.addEventListener("click", submitAccount);
@@ -76,4 +87,5 @@ function deleteHistory(event) {
   li.remove();
   historyArr = historyArr.filter((item) => item.id !== li.id);
   saveHistory();
+  updatePrice();
 }
