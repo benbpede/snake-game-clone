@@ -47,11 +47,6 @@ function submitAccount(event) {
 
 submitBtn.addEventListener("click", submitAccount);
 
-function hi(event) {
-  event.preventDefault();
-  console.log("hi");
-}
-
 function paintAccount(history) {
   const li = document.createElement("li");
   li.id = history.id;
