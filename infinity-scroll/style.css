@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-size: 120px;
+}
+
+li {
+  background-color: pink;
+  list-style: none;
+  text-align: center;
+  color: #fff;
+  font-size: 100px;
+  padding: 100px 0;
+  margin-bottom: 20px;
+}
+
+/*짝수 홀수 색상 구분*/
+li:nth-child(2n) {
+  background-color: skyblue;
+}
