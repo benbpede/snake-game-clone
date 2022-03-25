@@ -1,1 +1,1 @@
-# snake-game-clone
+# 잡다한 토이프로젝트입니다
