@@ -4,6 +4,7 @@ import Container from "./components/Container";
 import Detail from "./components/Detail";
 import Data from "./data";
 import { useState } from "react";
+
 import "./App.css";
 
 import { Link, Route, Switch } from "react-router-dom";
@@ -20,7 +21,7 @@ function App() {
           <Container shoes={shoes}></Container>
         </Route>
         <Route path="/detail/:id">
-          <Detail shoes={shoes} />
+          <Detail shoes={shoes} setShoes={setShoes} />
         </Route>
 
         <Route path="/:id">

@@ -1,8 +1,8 @@
 import React from "react";
 
 const Card = (props) => {
-  const shoes = props.shoes;
-  const shoeslist = shoes.map((상품) => (
+  const data = props.data;
+  const shoeslist = data.map((상품) => (
     <div className="col-md-4" key={상품.id}>
       <img src={상품.photo} width="100%" alt="" />
       <h4>{상품.title}</h4>
