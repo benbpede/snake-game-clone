@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Alert from "./Alert";
+import Info from "./Info";
+import TapContent from "./TapContent";
+import { Nav } from "react-bootstrap";
+import { CSSTransition } from "react-transition-group";
 
 import "./Detail.scss";
 
@@ -17,6 +21,9 @@ let 제목 = styled.h4`
 const Detail = (props) => {
   let [경고, 경고변경] = useState(true);
   let [인풋, 인풋변경] = useState("");
+
+  let [누른탭, 누른탭변경] = useState(0);
+  let [스위치, 스위치변경] = useState(false);
 
   const onChange = (e) => {
     인풋변경(e.target.value);
@@ -48,6 +55,12 @@ const Detail = (props) => {
     return arr.id == id;
   });
 
+  const onClick = (i) => {
+    let copy = [...props.재고];
+    copy[i]--;
+    props.재고변경(copy);
+  };
+
   return (
     <div className="container">
       <박스>
@@ -73,6 +86,7 @@ const Detail = (props) => {
           <h4 className="pt-5">{product.title}</h4>
           <p>{product.content}</p>
           <p>{product.price}원</p>
+          <Info 재고={props.재고[0]}></Info>
           <button className="btn btn-danger">주문하기</button>
           &nbsp;
           <button
@@ -85,6 +99,33 @@ const Detail = (props) => {
           </button>
         </div>
       </div>
+      <Nav className="mt-5" variant="tabs" defaultActiveKey="link-0">
+        <Nav.Item>
+          <Nav.Link
+            evnetKey="link-0"
+            onClick={() => {
+              스위치변경(false);
+              누른탭변경(0);
+            }}
+          >
+            Active
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link
+            eventKey="link-1"
+            onClick={() => {
+              스위치변경(false);
+              누른탭변경(1);
+            }}
+          >
+            Option 2
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
+      <CSSTransition in={스위치} classNames="wow" timeout={500}>
+        <TapContent 누른탭={누른탭} 스위치변경={스위치변경}></TapContent>
+      </CSSTransition>
     </div>
   );
 };

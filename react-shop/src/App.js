@@ -3,14 +3,18 @@ import Jumbotron from "./components/Jumbotron";
 import Container from "./components/Container";
 import Detail from "./components/Detail";
 import Data from "./data";
-import { useState } from "react";
+
+import React, { useState } from "react";
 
 import "./App.css";
 
 import { Link, Route, Switch } from "react-router-dom";
 
+export let 재고context = React.createContext();
+
 function App() {
   let [shoes, setShoes] = useState(Data);
+  let [재고, 재고변경] = useState([10, 11, 12]);
 
   return (
     <div className="App">
@@ -18,10 +22,12 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Jumbotron></Jumbotron>
-          <Container shoes={shoes}></Container>
+          <재고context.Provider value={재고}>
+            <Container shoes={shoes}></Container>
+          </재고context.Provider>
         </Route>
         <Route path="/detail/:id">
-          <Detail shoes={shoes} setShoes={setShoes} />
+          <Detail shoes={shoes} 재고={재고} 재고변경={재고변경} />
         </Route>
 
         <Route path="/:id">
