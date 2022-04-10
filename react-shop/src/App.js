@@ -2,6 +2,7 @@ import Navbars from "./components/Navbars";
 import Jumbotron from "./components/Jumbotron";
 import Container from "./components/Container";
 import Detail from "./components/Detail";
+import Cart from "./components/Cart";
 import Data from "./data";
 
 import React, { useState } from "react";
@@ -28,6 +29,10 @@ function App() {
         </Route>
         <Route path="/detail/:id">
           <Detail shoes={shoes} 재고={재고} 재고변경={재고변경} />
+        </Route>
+
+        <Route path="/cart">
+          <Cart></Cart>
         </Route>
 
         <Route path="/:id">
